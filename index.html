@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Comment-test</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="conteiner">
+	
+	<form>
+		<div class="form-group">
+			<label for="comment-name">name :</label>
+			<input type="name" class="form-control" id="commentName" placeholder="your name">
+		</div>
+		
+		<div class="form-group">
+			<label for="commentBody">comment :</label>
+			<input type="text" class="form-control" id="commentBody" placeholder="your comment">
+		</div>
+
+		<div class="form-group">
+			<label for="changeDate">change date?</label>
+			<input type="checkbox" name="changeDate" id="changeDate">
+			<label for="commentDate">date :</label>
+			<input type="date" class="form-control" id="commentDate" disabled="true">
+		</div>
+		
+		<div class="form-group">
+			<button type="submit" id="comment-add" class="add-btn">add comment</button>
+		</div>
+	</form>
+
+	<div id="comment-field"></div>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>

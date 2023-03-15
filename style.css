@@ -1,0 +1,88 @@
+body {
+	font-family: 'Roboto Slab', serif;
+}
+
+.conteiner {
+	width: 400px;
+	margin: auto;
+	margin-top: 40px;
+}
+
+/* comment form */
+.form-group {
+	margin-bottom: 10px;
+}
+
+.form-control {
+	padding-left: 10px;
+}
+
+#commentBody {
+	height: 50px;
+	width: 300px;
+}
+
+input, .add-btn {
+	border-radius: 20px;
+	border-color: rgba(128, 128, 128, .70);
+}
+
+.add-btn {
+	height: 30px;
+	width: 100%;
+	padding: 3px;
+	border: none;
+	background-color: gray;
+}
+
+.add-btn:hover, .add-btn:focus {
+	background-color: rgba(128, 128, 128, .70);
+}
+
+#changeDate {
+	margin-right: 25px;
+	margin-bottom: 10px;
+}
+
+/* comments */
+.show-comment_time {
+	/* float: right; */
+	text-align: end;
+	color: rgba(128, 128, 128, .70);
+	font-size: small;
+	margin-top: 20px;
+}
+
+.show-comment_name {
+	font-size: larger;
+	margin-bottom: 5px;
+}
+
+.show-comment_body {
+	padding-left: 15px;
+	/* margin-bottom: 20px; */
+	/* padding-bottom: 20px; */
+}
+
+.comment-content {
+	margin: 30px;
+}
+
+/* icons */
+
+.red-like {
+	content: url(./img/red-like.png);
+}
+
+#trashPic, #likePic {
+	float: right;
+	width: 16px;
+	height: 16px;
+	margin-right: 5px;
+}
+
+/* focus */
+
+.error {
+	border-color: red;
+}
