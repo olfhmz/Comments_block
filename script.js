@@ -147,6 +147,7 @@ function removeComment(target) {
 	let commentContent = target.parentNode;
 	let index = commentContent.id;
 	commentContent.parentNode.removeChild(commentContent);
+	comments.splice(index, 1);
 }
 
 let commentField = document.getElementById('comment-field');
