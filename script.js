@@ -1,8 +1,6 @@
 let comments = [];
-let timeStr = '';
 
 // время
-
 function timeConverter(curTime) {
 	let timeStr = '';
 	let a = new Date(curTime);
@@ -28,14 +26,6 @@ function hourTimeConverter(curTime) {
 	return (timeStr);
 }
 
-let changeBool = false;
-	
-commentDate.onchange = () => {	
-	if (commentDate.value){
-		changeBool = true;
-	}
-}
-
 // ошибки
 commentName.onchange = () => {
 	if (commentName.value.length > 15) {
@@ -59,10 +49,22 @@ document.getElementById('comment-add').onclick = (event) => {
 	let commentName = document.getElementById('commentName');
 	let commentBody = document.getElementById('commentBody');
 
+
+	let commentDate = document.getElementById('commentDate');
+	
+	function changeTime() {
+		if (commentDate.value)
+			return true;
+		else
+			return false;
+	}
+
+
 	let comment = {
 		name : commentName.value,
 		body : commentBody.value,
-		time : Date.now()
+		time : Date.now(),
+		changeBool : changeTime()
 	}
 
 	if (commentParse() == true)
@@ -98,7 +100,7 @@ function showComments() {
 
 		output += `<div id="${numberOfComments}" class="comment-content">`;
 
-		if (changeBool == true) {
+		if (item.changeBool == true) {
 			output += `<p class="show-comment_time">${commentDate.value + ', ' + hourTimeConverter(item.time)}</p>`;
 		} else {
 			output += `<p class="show-comment_time">${timeConverter(item.time)}</p>`;
@@ -132,9 +134,11 @@ changeDate.onclick = () => {
 
 	if (changeDate.checked) {
 		commentDate.disabled = false;
+		commentDate.style.backgroundColor = '';
 	}
 	if (!changeDate.checked) {
 		commentDate.disabled = true;
+		commentDate.style.backgroundColor = 'rgba(128, 128, 128, .5)';
 	}
 }
 
