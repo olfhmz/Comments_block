@@ -28,18 +28,26 @@ function hourTimeConverter(curTime) {
 
 // ошибки
 commentName.onchange = () => {
+	let nameError = commentName.parentElement;
+	
 	if (commentName.value.length > 15) {
 		commentName.classList.add('error');
+		nameError.classList.add('show-error');
 	} else {
 		commentName.classList.remove('error');
+		nameError.classList.remove('show-error');
 	}
 };
 
 commentBody.onchange = () => {
+	let nameError = commentBody.parentElement;
+
 	if (commentBody.value.length > 40) {
 		commentBody.classList.add('error');
+		nameError.classList.add('show-error');
 	} else {
 		commentBody.classList.remove('error');
+		nameError.classList.remove('show-error');
 	}
 };
 
@@ -73,11 +81,9 @@ document.getElementById('comment-add').onclick = (event) => {
 	function commentParse() {
 		if (!commentName.value || !commentBody.value) return false;
 		if (commentName.value.length > 15) {
-			alert('Name is too long');
 			return false;
 		}
 		if (commentBody.value.length > 40) {
-			alert('Comment is too long');
 			return false;
 		}
 		return true;
